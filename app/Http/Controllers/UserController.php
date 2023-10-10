@@ -58,7 +58,7 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email',
+            // 'email' => 'required|email',
             'password' => 'same:confirm-password',
             'roles' => 'required'
         ]);
@@ -77,7 +77,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('admin.member')
-                        ->with('success','User updated successfully');
+                        ->with('success','User Updated Successfully');
     }
     
     public function destroy($id)
